@@ -35,8 +35,6 @@ config = utils.generate_config(drug_encoding = drug_encoding,
                                LR = 0.001,
                                batch_size = 8,
                                hidden_dim_drug = 128,
-                               mpnn_hidden_size = 128,
-                               mpnn_depth = 3,
                                )
 import numpy as np
 np.unique(y)
