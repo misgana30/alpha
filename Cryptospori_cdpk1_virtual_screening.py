@@ -47,7 +47,9 @@ model.train(train, val, test)
 model.save_model('./final_deep_learning')
 
 #######################################################################################################################
-# loading 1930980 Enamine compounds in SMILES format
-def doll (n=1930980):
-    X_drug = dataset.pd.read_csv('Enamine_hts.txt').sample(n=n, replace = True).reset_index(drop = True)
-    return X_drug.values
+# prediction
+X_drug = ['Drug_in_similes format'] 
+X_pred = utils.data_process(X_drug = X_drug, y = y, drug_encoding = drug_encoding, split_method='no_split')
+y_pred = model.predict(X_pred)
+print('The predicted score is ' + str(y_pred))
+ 
